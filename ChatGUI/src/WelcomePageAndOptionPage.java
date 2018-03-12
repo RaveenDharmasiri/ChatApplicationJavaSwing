@@ -154,19 +154,13 @@ public class WelcomePageAndOptionPage extends javax.swing.JFrame {
     private void jbtnSendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSendMessageActionPerformed
         // this button is used to send the message from one user to another user.
         
-        String userLoginId = jtxtLoginId.getText().toString();
         
-        String message = jtxtAUserMessage.getText().toString();
         
-        serverObj.requestToSendMessageRemote(userLoginId, message);
+        
     }//GEN-LAST:event_jbtnSendMessageActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            serverObj.listenForMessage("192.168.43.98");
-        } catch (IOException ex) {
-            Logger.getLogger(WelcomePageAndOptionPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

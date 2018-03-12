@@ -83,6 +83,8 @@ public class MockUpServer {
         }
     }
     
+    
+    // this code is for the server
     public void listenForRegistration(String ipaddress) throws IOException {
         
         String clientSentence;
@@ -107,26 +109,6 @@ public class MockUpServer {
         }
         
     }
-    
-    public void requestToSendMessageRemote(String userLoginId, String message){
-        try {
-            String myDataPacket = userLoginId + "-" + message;
-            String modifiedSentence;
-            Socket clientSocket = new Socket("112.134.77.35", 6789);
-            DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-            
-            BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); 
-//          
-            outToServer.writeBytes(myDataPacket);
-            modifiedSentence = inFromServer.readLine();
-            System.out.println("FROM SERVER: " + modifiedSentence); 
-            clientSocket.close();
-
-        } catch (IOException ex) {
-            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
     
     // this code is for the server. the server is going to wait until the user login and then check their information against the server and see if his or her information is available in
     // the database. 
@@ -165,60 +147,9 @@ public class MockUpServer {
     }
     
     
-    public void listenForMessage(String ipaddress) throws IOException{
-        //Socket clientReceiver;
-        String msgServerToSender;
-        String msgServerToReceiver;
-        String clientMessage;
-        int messageCount =1;
-        while(messageCount < 2){
-            ServerSocket welcomeSocket = new ServerSocket(8789, 1, InetAddress.getByName(ipaddress));
-            Socket connectionSocket = welcomeSocket.accept();
-            
-            BufferedReader inFromSenderClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-            
-            //String[] strInFromSenderClient = inFromSenderClient.readLine().split("-");
-            //clientReceiver = this.requestToFindingUserSocket(strInFromSenderClient[0]);
-            DataOutputStream outToRecieverClient = new DataOutputStream(receiverSocket.getOutputStream());
-            DataOutputStream outToSenderClient = new DataOutputStream(connectionSocket.getOutputStream());
-            
-            
-            // storing the message of the sender into this string so that later it can be sent to the receiver. 
-            msgServerToReceiver = inFromSenderClient.readLine();
-            
-            // this is message that is sent to the sender from the server when the message has been sent to the receiver. 
-            msgServerToSender = "Your message has been sent";
-
-            // this is the part where the senders message is sent to the receiver. 
-            outToRecieverClient.writeBytes(msgServerToReceiver.toUpperCase());
-            
-            // informing the sender that he message has been received
-            outToSenderClient.writeBytes(msgServerToSender.toUpperCase());
-            
-        }
-    }
-    
-    public void listenToReceiverClient(String ipaddress) throws IOException{
-        ServerSocket welcomeSocket = new ServerSocket(8789, 1, InetAddress.getByName(ipaddress));
-        receiverSocket = welcomeSocket.accept();
-        System.out.println(receiverSocket);
-        
-        BufferedReader inFromReceiverClient = new BufferedReader(new InputStreamReader(receiverSocket.getInputStream()));
-        DataOutputStream outToClient = new DataOutputStream(receiverSocket.getOutputStream());
-        
-        System.out.println(inFromReceiverClient.readLine());
-        
-        String message = "You have been recorded in the server";
-        
-        
-        outToClient.writeBytes(message.toUpperCase());
-        
-        welcomeSocket.close();
-    }
     
     
     
-    
-    
+    // from here the code is how to send message between two users. 
     
 }
