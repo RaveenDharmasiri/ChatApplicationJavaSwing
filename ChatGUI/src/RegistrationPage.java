@@ -21,6 +21,8 @@ public class RegistrationPage extends javax.swing.JFrame {
     MockUpServer serverObj = new MockUpServer();
     
     private static RegistrationPage frameIntance = null;
+    
+    public static RegistrationPage register = new RegistrationPage();
 
     private RegistrationPage() {
         initComponents();
@@ -56,8 +58,11 @@ public class RegistrationPage extends javax.swing.JFrame {
         txtNickName = new javax.swing.JTextField();
         btnRegister2 = new javax.swing.JButton();
         btnRemoteRegistration = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel1.setText("Registration");
@@ -221,6 +226,14 @@ public class RegistrationPage extends javax.swing.JFrame {
             }
         });
 
+        btnBack.setBackground(new java.awt.Color(102, 102, 102));
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -235,8 +248,9 @@ public class RegistrationPage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jSeparator1)
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRemoteRegistration)
@@ -248,7 +262,8 @@ public class RegistrationPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRemoteRegistration)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -325,6 +340,12 @@ public class RegistrationPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRemoteRegistrationActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        LoginPage.loginObj.setVisible(true);
+        register.setVisible(false);
+        
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -341,6 +362,7 @@ public class RegistrationPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRegister2;
     private javax.swing.JButton btnRemoteRegistration;
     private javax.swing.JLabel jLabel1;

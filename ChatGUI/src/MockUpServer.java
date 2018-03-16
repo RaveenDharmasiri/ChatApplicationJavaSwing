@@ -145,11 +145,4 @@ public class MockUpServer {
             userCount++;
         }
     }
-    
-    
-    
-    
-    
-    // from here the code is how to send message between two users. 
-    
 }
