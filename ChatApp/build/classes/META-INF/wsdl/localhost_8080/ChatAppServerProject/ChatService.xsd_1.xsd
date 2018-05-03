@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://ChatService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ChatService/">
+
+<xs:element name="addMessage" type="tns:addMessage"/>
+
+<xs:element name="addMessageResponse" type="tns:addMessageResponse"/>
+
+<xs:element name="addThread" type="tns:addThread"/>
+
+<xs:element name="addThreadResponse" type="tns:addThreadResponse"/>
+
+<xs:element name="checkNewThread" type="tns:checkNewThread"/>
+
+<xs:element name="checkNewThreadMessages" type="tns:checkNewThreadMessages"/>
+
+<xs:element name="checkNewThreadMessagesResponse" type="tns:checkNewThreadMessagesResponse"/>
+
+<xs:element name="checkNewThreadResponse" type="tns:checkNewThreadResponse"/>
+
+<xs:element name="getThreadMessages" type="tns:getThreadMessages"/>
+
+<xs:element name="getThreadMessagesResponse" type="tns:getThreadMessagesResponse"/>
+
+<xs:element name="getThreads" type="tns:getThreads"/>
+
+<xs:element name="getThreadsResponse" type="tns:getThreadsResponse"/>
+
+<xs:complexType name="checkNewThread">
+<xs:sequence>
+<xs:element name="latestThreadId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkNewThreadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addThread">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="creator" type="xs:string" minOccurs="0"/>
+<xs:element name="loginId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addThreadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getThreads">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getThreadsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMessage">
+<xs:sequence>
+<xs:element name="nickName" type="xs:string" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="threadId" type="xs:string" minOccurs="0"/>
+<xs:element name="loginId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMessageResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="checkNewThreadMessages">
+<xs:sequence>
+<xs:element name="threadId" type="xs:string" minOccurs="0"/>
+<xs:element name="latestMessageId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkNewThreadMessagesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getThreadMessages">
+<xs:sequence>
+<xs:element name="threadId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getThreadMessagesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

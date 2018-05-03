@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ChatAppServerProject/displayName?wsdl" uri="xml-resources/web-service-references/displayName/wsdl/localhost_8080/ChatAppServerProject/displayName.wsdl"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/displayName?xsd=1" uri="xml-resources/web-service-references/displayName/wsdl/localhost_8080/ChatAppServerProject/displayName.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/ServerApplication?wsdl" uri="xml-resources/web-service-references/ServerApplication/wsdl/localhost_8080/ChatAppServerProject/ServerApplication.wsdl"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/ServerApplication?xsd=1" uri="xml-resources/web-service-references/ServerApplication/wsdl/localhost_8080/ChatAppServerProject/ServerApplication.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/ChatService?xsd=2" uri="xml-resources/web-service-references/ChatService/wsdl/localhost_8080/ChatAppServerProject/ChatService.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/ChatService?wsdl" uri="xml-resources/web-service-references/ChatService/wsdl/localhost_8080/ChatAppServerProject/ChatService.wsdl"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/ChatService?xsd=1" uri="xml-resources/web-service-references/ChatService/wsdl/localhost_8080/ChatAppServerProject/ChatService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/UserService?wsdl" uri="xml-resources/web-service-references/UserService/wsdl/localhost_8080/ChatAppServerProject/UserService.wsdl"/>
+    <system systemId="http://localhost:8080/ChatAppServerProject/UserService?xsd=1" uri="xml-resources/web-service-references/UserService/wsdl/localhost_8080/ChatAppServerProject/UserService.xsd_1.xsd"/>
+</catalog>
